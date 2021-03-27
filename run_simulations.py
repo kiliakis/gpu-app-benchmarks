@@ -90,7 +90,8 @@ class ConfigurationSpec:
                     os.chdir(this_run_dir)
                     outfile = 'stdout.txt'
                     errfile = 'stderr.txt'
-                    exe_args = ['-m', ','.join(nvprof_params['-m'])]
+                    exe_args = ['nvprof', '--csv']
+                    exe_args += ['-m', ','.join(nvprof_params['-m'])]
                     exe_args += ['-e', ','.join(nvprof_params['-e'])]
                     exe_args += [os.path.join(full_exec_dir, benchmark)]
                     if args is not None:
