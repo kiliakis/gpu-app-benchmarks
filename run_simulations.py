@@ -150,7 +150,7 @@ if __name__ == '__main__':
 
     if options.run_directory == "":
         options.run_directory = os.path.join(
-            this_directory, "./sim_run_%s" % cuda_version)
+            this_directory, "./bench_run_%s" % cuda_version)
     else:
         options.run_directory = os.path.join(os.getcwd(), options.run_directory)
 
@@ -167,7 +167,7 @@ if __name__ == '__main__':
                                                      this_directory)
     benchmarks = common.parse_app_yml(options.benchmark_file)
     # cfgs = common.parse_config_yml(options.configs_file)
-    cfgs = ['default', 'base', 'extra']
+    cfgs = [('default', 'base', 'extra')]
     configurations = []
     for config in cfgs:
         configurations.append(ConfigurationSpec(config))
