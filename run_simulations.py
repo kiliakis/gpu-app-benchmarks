@@ -117,7 +117,7 @@ class ConfigurationSpec:
                                    + "logfiles/" + log_name + "."
                                    + day_string
                                    + "-" + time_string + ".txt", 'a')
-                    print >> logfile, "%s %6s %-22s %-100s %-25s %s.%s" %\
+                    print >> logfile, "%s %-22s %-100s %-25s %s" %\
                         (time_string,
                          # torque_out,
                          benchmark,
