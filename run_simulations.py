@@ -98,6 +98,7 @@ class ConfigurationSpec:
                         [os.path.join(full_exec_dir, benchmark)]
                     if args is not None:
                         exe_args += [args]
+                    print("Running: " + exe_args)
                     if subprocess.call(exe_args,
                                        stdout=open(outfile, 'w'),
                                        stderr=open(errfile, 'w')) < 0:
