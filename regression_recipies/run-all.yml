@@ -8,8 +8,8 @@ run:
     # - rodinia-3.1
 
 rodinia_2.0-ft:
-    exec_dir: "./bin/10.1/release/"
-    data_dirs: "./data_dirs/cuda/rodinia/2.0-ft/"
+    exec_dir: "../bin/10.1/release/"
+    data_dirs: "../data_dirs/cuda/rodinia/2.0-ft/"
     execs:
         - backprop-rodinia-2.0-ft:
             - 8192 ./data/result-8192.txt
@@ -37,8 +37,8 @@ rodinia_2.0-ft:
             - 3 6 16 1024 1024 100 none output.txt 1 ./data/result_3_6_16_1024_1024_100_none_1.txt
 
 parboil-0.2:
-    exec_dir: "./bin/10.1/release/"
-    data_dirs: ./data_dirs/parboil/"
+    exec_dir: "../bin/10.1/release/"
+    data_dirs: ../data_dirs/parboil/"
     execs:
         - parboil-spmv:
             - -i ./data/small/input/1138_bus.mtx,./data/small/input/vector.bin
@@ -65,8 +65,8 @@ parboil-0.2:
             - -i ./data/xxsmall/input/watboxxxsmall.sl40.pqr
 
 sdk-4.1.15:
-    exec_dir: "./bin/10.1/release/sdk/"
-    data_dirs: "./data_dirs/cuda/sdk/4.2/"
+    exec_dir: "../bin/10.1/release/sdk/"
+    data_dirs: "../data_dirs/cuda/sdk/4.2/"
     execs:
         - BlackScholes:
             - 
@@ -105,8 +105,8 @@ sdk-4.1.15:
             - --perftest
 
 ispass2009-1.0:
-    exec_dir: "./bin/10.1/release/"
-    data_dirs: "./data_dirs/cuda/ispass-2009/"
+    exec_dir: "../bin/10.1/release/"
+    data_dirs: "../data_dirs/cuda/ispass-2009/"
     execs:
         - ispass-2009-AES:
             - e 256 ./data/output.bmp ./data/key256.txt 
@@ -130,8 +130,8 @@ ispass2009-1.0:
             - 
 
 rodinia-3.1:
-    exec_dir: "./bin/10.1/release/"
-    data_dirs: "./data_dirs/cuda/rodinia/3.1/"
+    exec_dir: "../bin/10.1/release/"
+    data_dirs: "../data_dirs/cuda/rodinia/3.1/"
     execs:
         - b+tree-rodinia-3.1:
             - file ./data/mil.txt command ./data/command-small.txt
