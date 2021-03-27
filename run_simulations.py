@@ -173,7 +173,7 @@ if __name__ == '__main__':
         configurations.append(ConfigurationSpec(config))
 
     print("Running Benchmarks"
-          + "\nUsing configs_file " + options.configs_file
+          # + "\nUsing configs_file " + options.configs_file
           + "\nBenchmark File " + options.benchmark_file)
 
     for config in configurations:
