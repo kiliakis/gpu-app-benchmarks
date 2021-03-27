@@ -94,7 +94,11 @@ class ConfigurationSpec:
                     os.chdir(this_run_dir)
                     outfile = 'stdout.txt'
                     errfile = 'stderr.txt'
-                    if subprocess.call(nvprof_params + [full_exec_dir, args],
+                    exe_args = nvprof_params + \
+                        [os.path.join(full_exec_dir, benchmark)]
+                    if args is not None:
+                        exe_args += [args]
+                    if subprocess.call(exe_args,
                                        stdout=open(outfile, 'w'),
                                        stderr=open(errfile, 'w')) < 0:
                         exit("Error running nvprof")
