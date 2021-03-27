@@ -68,6 +68,22 @@ sdk-4.1.15:
     exec_dir: "../bin/10.1/release/sdk/"
     data_dirs: "../data_dirs/cuda/sdk/4.2/"
     execs:
+        - HSOpticalFlow:
+            -
+        - cannyEdgeDetectorNPP:
+            -
+        - cdpAdvancedQuicksort:
+            -
+        - cdpBezierTessellation:
+            -
+        - cdpQuadtree:
+            -
+        - cdpSimplePrint:
+            -
+        - cdpSimpleQuicksort:
+            -
+        - convolutionFFT2D:
+            - 
         - BlackScholes:
             - 
         - MonteCarlo:

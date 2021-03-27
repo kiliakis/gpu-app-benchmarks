@@ -25,22 +25,18 @@ this_directory = os.path.dirname(os.path.realpath(__file__)) + "/"
 
 # parser.add_argument('-c', '--configs_file', type=str,
 #                     help='configs_file used to determine which nvprof options are extracted.')
-# nvprof_params = {
-#     'nvprof': [],
-#     '-m':
-#     # ['achieved_occupancy',
-#     #        'ipc', 'issue_ipc', 'stall_exec_dependecy',
-#     #        'stall_memory_dependency', 'stall_pipe_busy',
-#     #        'stall_other', 'stall_sync'
-#     #        ],
-#     '-e':
-#     # ['elapsed_cycles_sm', 'elapsed_cycles_pm',
-#     #        'active_warps_pm', 'active_cycles_pm',
-#     #        'inst_issued0', 'inst_executed',
-#     #        'sm_cta_launched'],
-#     '--csv': []
-# }
-nvprof_params = ['nvprof', '-e', 'all', '-m', 'all', '--csv']
+nvprof_params = {
+    '-m': ['achieved_occupancy',
+           'ipc', 'issue_ipc', 'stall_exec_dependecy',
+           'stall_memory_dependency', 'stall_pipe_busy',
+           'stall_other', 'stall_sync'
+           ],
+    '-e': ['elapsed_cycles_sm', 'elapsed_cycles_pm',
+           'active_warps_pm', 'active_cycles_pm',
+           'inst_issued0', 'inst_executed',
+           'sm_cta_launched', 'warps_launched'],
+}
+# nvprof_params = ['nvprof', '-e', 'all', '-m', 'all', '--csv']
 
 now_time = datetime.datetime.now()
 day_string = now_time.strftime("%d.%m.%y")
@@ -94,8 +90,9 @@ class ConfigurationSpec:
                     os.chdir(this_run_dir)
                     outfile = 'stdout.txt'
                     errfile = 'stderr.txt'
-                    exe_args = nvprof_params + \
-                        [os.path.join(full_exec_dir, benchmark)]
+                    exe_args = ['-m', ','.join(nvprof_params['-m'])]
+                    exe_args += ['-e', ','.join(nvprof_params['-e'])]
+                    exe_args += [os.path.join(full_exec_dir, benchmark)]
                     if args is not None:
                         exe_args += [args]
                     print("Running: " + ' '.join(exe_args))
