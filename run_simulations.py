@@ -96,11 +96,13 @@ class ConfigurationSpec:
                     exe_args += [os.path.join(full_exec_dir, benchmark)]
                     if args is not None:
                         exe_args += [args]
-                    print("Running: " + ' '.join(exe_args))
+                    exe_args = ' '.join(exe_args)
+                    print("Running: " + (exe_args))
                     with open('command.txt', 'w') as f:
-                        f.write(' '.join(exe_args))
+                        f.write((exe_args))
 
                     if subprocess.call(exe_args,
+                                       shell=True,
                                        stdout=open(outfile, 'w'),
                                        stderr=open(errfile, 'w')) < 0:
                         # exit("Error running nvprof")
