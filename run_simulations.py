@@ -97,16 +97,23 @@ class ConfigurationSpec:
                     if args is not None:
                         exe_args += [args]
                     print("Running: " + ' '.join(exe_args))
+                    with open('command.txt', 'w') as f:
+                        f.write(' '.join(exe_args))
+
                     if subprocess.call(exe_args,
                                        stdout=open(outfile, 'w'),
                                        stderr=open(errfile, 'w')) < 0:
-                        exit("Error running nvprof")
+                        # exit("Error running nvprof")
+                        with open('hasrun.txt', 'w') as f:
+                            f.write('Fail')
                     else:
                         # Parse the torque output for just the numeric ID
                         print("Job run ("
                               + benchmark + "-"
                               + self.benchmark_args_subdirs[args]
                               + " " + self.run_subdir + ")")
+                        with open('hasrun.txt', 'w') as f:
+                            f.write('Success')
                     os.chdir(saved_dir)
 
                     # Dump the benchmark description to the logfile
