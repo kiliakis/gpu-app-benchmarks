@@ -20,8 +20,8 @@ rodinia_2.0-ft:
         - heartwall-rodinia-2.0-ft:
             - ./data/test.avi 1 ./data/result-1.txt
         - kmeans-rodinia-2.0-ft:
-            - -i data/6400.txt -g data/6400-result.txt -o 
             - -i data/25600.txt -g data/25600-result.txt -o
+            - -i data/128k.txt -g data/128k-result.txt -o 
         - lud-rodinia-2.0-ft:
             - -v -b -i ./data/2048.dat
             - -v -b -i ./data/256.dat
@@ -96,7 +96,7 @@ sdk-4.1.15:
             - 
         - BlackScholes:
             - 
-        - MonteCarlo:
+        - MonteCarloMultiGPU:
             - 
         - SobolQRNG:
             - --vectors=10000 --dimensions=100
@@ -126,7 +126,8 @@ sdk-4.1.15:
         - vectorAdd:
             - 
         - nbody:
-            - -n=512 -compare -benchmark
+            - -numbodies=512 -compare -benchmark
+            - -numbodies=16384 -compare -benchmark
         - Mandelbrot:
             - --perftest
 

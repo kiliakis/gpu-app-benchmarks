@@ -62,10 +62,11 @@ sdk-4.1.15:
     exec_dir: "../bin/10.1/release/sdk/"
     data_dirs: "../data_dirs/cuda/sdk/4.2/"
     execs:
-        - MonteCarlo:
+        - MonteCarloMultiGPU:
             - 
         - nbody:
-            - -n=512 -compare -benchmark
+            - -numbodies=512 -compare -benchmark
+            - -numbodies=16384 -compare -benchmark
         - Mandelbrot:
             - --perftest
 
