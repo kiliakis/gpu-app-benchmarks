@@ -14,14 +14,14 @@ rodinia_2.0-ft:
         - backprop-rodinia-2.0-ft:
             - 8192 ./data/result-8192.txt
         - bfs-rodinia-2.0-ft:
-            - ./data/graph65536.txt ./data/graph65536-result.txt
+            - ./data/graph65536.txt
         - hotspot-rodinia-2.0-ft:
             - 30 6 40 ./data/result_30_6_40.txt
         - heartwall-rodinia-2.0-ft:
             - ./data/test.avi 1 ./data/result-1.txt
         - kmeans-rodinia-2.0-ft:
-            - -i data/25600.txt -g data/25600-result.txt -o
-            - -i data/128k.txt -g data/128k-result.txt -o 
+            - -i data/25600.txt -g data/25600-result.txt
+            - -i data/128k.txt -g data/128k-result.txt 
         - lud-rodinia-2.0-ft:
             - -v -b -i ./data/2048.dat
             - -v -b -i ./data/256.dat
@@ -74,16 +74,16 @@ parboil-0.2:
             - -i ./data/default/input/512x512x64x100.bin -- 512 512 64 100 
         - parboil-tpacf:
             - -i ./data/small/input/Datapnts.1,./data/small/input/Randompnts.1 -- -p487 -n1
-            - -i ./data/large/input/Datapnts.1,./data/large/input/Randompnts.1 -- -p10391 -n100
+            # - -i ./data/large/input/Datapnts.1,./data/large/input/Randompnts.1,./data/large/input/Randompnts.1,./data/large/input/Randompnts.1,./data/large/input/Randompnts.1,./data/large/input/Randompnts.1,./data/large/input/Randompnts.1,./data/large/input/Randompnts.1,./data/large/input/Randompnts.1,./data/large/input/Randompnts.1, -- -p10391 -n100
 
 sdk-4.1.15:
     exec_dir: "../bin/10.1/release/sdk/"
     data_dirs: "../data_dirs/cuda/sdk/4.2/"
     execs:
-        - HSOpticalFlow:
-            -
-        - cannyEdgeDetectorNPP:
-            -
+        # - HSOpticalFlow:
+            # -
+        # - cannyEdgeDetectorNPP:
+            # -
         - cdpAdvancedQuicksort:
             -
         - cdpBezierTessellation:
@@ -92,12 +92,12 @@ sdk-4.1.15:
             -
         - cdpSimpleQuicksort:
             -
-        - convolutionFFT2D:
-            - 
+        # - convolutionFFT2D:
+            # - 
         - BlackScholes:
             - 
-        - MonteCarloMultiGPU:
-            - 
+        # - MonteCarloMultiGPU:
+            # - 
         - SobolQRNG:
             - --vectors=10000 --dimensions=100
         - binomialOptions:
@@ -125,11 +125,11 @@ sdk-4.1.15:
             - --dimY=128 --dimX=128
         - vectorAdd:
             - 
-        - nbody:
-            - -numbodies=512 -compare -benchmark
-            - -numbodies=16384 -compare -benchmark
-        - Mandelbrot:
-            - --perftest
+        # - nbody:
+            # - -numbodies=512 -compare -benchmark
+            # - -numbodies=16384 -compare -benchmark
+        # - Mandelbrot:
+            # - --perftest
 
 ispass2009-1.0:
     exec_dir: "../bin/10.1/release/"

@@ -3,7 +3,7 @@
 run:
     - rodinia_2.0-ft
     - parboil-0.2
-    - sdk-4.1.15
+    # - sdk-4.1.15
     # - ispass2009-1.0
     # - rodinia-3.1
 
@@ -20,9 +20,9 @@ rodinia_2.0-ft:
         #     - 30 6 40 ./data/result_30_6_40.txt
         # - heartwall-rodinia-2.0-ft:
         #     - ./data/test.avi 1 ./data/result-1.txt
-        # - kmeans-rodinia-2.0-ft:
-        #     - -i data/6400.txt -g data/6400-result.txt -o 
-        #     - -i data/25600.txt -g data/25600-result.txt -o
+        - kmeans-rodinia-2.0-ft:
+            - -i data/25600.txt -g data/25600-result.txt
+            - -i data/128k.txt -g data/128k-result.txt 
         # - lud-rodinia-2.0-ft:
         #     - -v -b -i ./data/2048.dat
         #     - -v -b -i ./data/256.dat
@@ -31,11 +31,9 @@ rodinia_2.0-ft:
         #     - 256 10 ./data/result_256_10.txt
         # - nn-rodinia-2.0-ft:
         #     - ./data/filelist_4 3 30 90 ./data/filelist_4_3_30_90-result.txt
-        - pathfinder-rodinia-2.0-ft:
+        # - pathfinder-rodinia-2.0-ft:
             # - 10000 100 50 ./data/result_10000_100_50.txt
             # - 1000 20 50 ./data/result_1000_20_50.txt
-            - 10000 100 50
-            - 1000 20 50
 
         # - srad_v2-rodinia-2.0-ft:
         #     - ./data/matrix128x128.txt 1 150 1 100 .5 2 ./data/result_matrix128x128_1_150_1_100_.5_2.txt
@@ -51,24 +49,17 @@ parboil-0.2:
             - -i ./data/NY/input/graph_input.dat
             - -i ./data/1M/input/graph_input.dat
         - parboil-lbm:
-            - -i ./data/short/input/120_120_10_ldc.of -- 2
-            - -i ./data/long/input/120_120_150_ldc.of -- 2
-        - parboil-tpacf:
-            - -i ./data/small/input/Datapnts.1,./data/small/input/Randompnts.1 -- -p487 -n1
-            - -i ./data/large/input/Datapnts.1,./data/large/input/Randompnts.1 -- -p10391 -n100
+            - -i ./data/short/input/120_120_150_ldc.of -- 2
+            # - -i ./data/long/input/120_120_150_ldc.of -- 2
+        # - parboil-tpacf:
+            # - -i ./data/small/input/Datapnts.1,./data/small/input/Randompnts.1 -- -p487 -n1
+            # - -i ./data/large/input/Datapnts.1,./data/large/input/Randompnts.1 -- -p10391 -n100
 
 
 sdk-4.1.15:
     exec_dir: "../bin/10.1/release/sdk/"
     data_dirs: "../data_dirs/cuda/sdk/4.2/"
     execs:
-        - MonteCarloMultiGPU:
-            - 
-        - nbody:
-            - -numbodies=512 -compare -benchmark
-            - -numbodies=16384 -compare -benchmark
-        - Mandelbrot:
-            - --perftest
 
 ispass2009-1.0:
     exec_dir: "../bin/10.1/release/"
