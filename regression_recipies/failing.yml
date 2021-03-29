@@ -5,7 +5,7 @@ run:
     - parboil-0.2
     # - sdk-4.1.15
     # - ispass2009-1.0
-    # - rodinia-3.1
+    - rodinia-3.1
 
 rodinia_2.0-ft:
     exec_dir: "../bin/10.1/release/"
@@ -13,16 +13,16 @@ rodinia_2.0-ft:
     execs:
         # - backprop-rodinia-2.0-ft:
         #     - 8192 ./data/result-8192.txt
-        - bfs-rodinia-2.0-ft:
+        # - bfs-rodinia-2.0-ft:
             # - ./data/graph65536.txt ./data/graph65536-result.txt
-            - ./data/graph65536.txt
+            # - ./data/graph65536.txt
         # - hotspot-rodinia-2.0-ft:
         #     - 30 6 40 ./data/result_30_6_40.txt
         # - heartwall-rodinia-2.0-ft:
         #     - ./data/test.avi 1 ./data/result-1.txt
         - kmeans-rodinia-2.0-ft:
-            - -i data/25600.txt -g data/25600-result.txt
-            - -i data/128k.txt -g data/128k-result.txt 
+            - -i ./data/25600.txt -g ./data/25600-result.txt
+            - -i ./data/128k.txt -g ./data/128k-result.txt 
         # - lud-rodinia-2.0-ft:
         #     - -v -b -i ./data/2048.dat
         #     - -v -b -i ./data/256.dat
@@ -50,7 +50,7 @@ parboil-0.2:
             - -i ./data/1M/input/graph_input.dat
         - parboil-lbm:
             - -i ./data/short/input/120_120_150_ldc.of -- 2
-            # - -i ./data/long/input/120_120_150_ldc.of -- 2
+            - -i ./data/long/input/120_120_150_ldc.of -- 2
         # - parboil-tpacf:
             # - -i ./data/small/input/Datapnts.1,./data/small/input/Randompnts.1 -- -p487 -n1
             # - -i ./data/large/input/Datapnts.1,./data/large/input/Randompnts.1 -- -p10391 -n100
@@ -74,34 +74,37 @@ rodinia-3.1:
             - file ./data/mil.txt command ./data/command-small.txt
         # - bfs-rodinia-3.1:
         #     - 
-        # - cfd-rodinia-3.1:
-        #     - 
+        - cfd-rodinia-3.1:
+            - ./data/cfd/fvcorr.domn.097K   
+            # - ./data/cfd/fvcorr.domn.193K   
+            # - ./data/cfd/missile.domn.0.2M  
         - dwt2d-rodinia-3.1:
             - ./data/768.bmp -d 768x768 -f -5 -l 3
             # - ./data/192.bmp -d 192x192 -f -5 -l 3
         - gaussian-rodinia-3.1:
             - -s 200
-        # - heartwall-rodinia-3.1:
-        #     - 
-        # - hotspot-rodinia-3.1:
-        #     - 
-        # - hotspot3D-rodinia-3.1:
-        #     - 
-        # - huffman-rodinia-3.1:
-        #     - 
+        - heartwall-rodinia-3.1:
+            - ./data/test.avi 1
+        - hotspot-rodinia-3.1:
+            - 512 2 2 ./data/temp_512 ./data/power_512 ./data/output512_2_2.out
+        - hotspot3D-rodinia-3.1:
+            - 512 8 100 ./data/hotspot3D/power_512x8 ./data/hotspot3D/temp_512x8 ./data/output.out
+        - huffman-rodinia-3.1:
+            - ./data/test1024_H2.206587175259.in 
         - hybridsort-rodinia-3.1:
             # - ./data/80000.txt
             - ./data/50000.txt
             # - ./data/100000.txt
         # - kmeans-rodinia-3.1:
         #     - 
-        # - lavamd-rodinia-3.1:
-        #    -
+        - lavamd-rodinia-3.1:
+           - -boxes1d 10
         - leukocyte-rodinia-3.1:
             - ./data/testfile.avi 1 
-        - lud-rodinia-3.1:
-            - -v -b -i ./data/2048.dat
-            - -v -b -i ./data/256.dat
+            - ./data/testfile.avi 5 
+        # - lud-rodinia-3.1:
+            # - -v -b -i ./data/2048.dat
+            # - -v -b -i ./data/256.dat
         # - mummergpu-rodinia-3.1:
         #     - ./data/NC_003997.20k.fna ./data/NC_003997_q25bp.50k.fna
         - myocyte-rodinia-3.1:
