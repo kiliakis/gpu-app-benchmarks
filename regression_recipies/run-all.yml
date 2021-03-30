@@ -53,7 +53,7 @@ parboil-0.2:
             - -i ./data/default/input/img.bin -- 1
             - -i ./data/large/input/img.bin -- 1
         - parboil-lbm:
-            - -i ./data/short/input/120_120_10_ldc.of -- 2
+            - -i ./data/short/input/120_120_150_ldc.of -- 2
             - -i ./data/long/input/120_120_150_ldc.of -- 2
         - parboil-mri-gridding:
             - -i ./data/small/input/small.uks -- 32 0
