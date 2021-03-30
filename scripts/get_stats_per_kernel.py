@@ -62,14 +62,14 @@ if __name__ == '__main__':
             continue
         # here we have found our input file
         # first extract the needed app_args, etc
-        app_and_arg = root.split('/')[-4:-2]
-        app_and_arg = ''.join(app_and_arg)
+        app_and_arg = root.split('/')[-3:-1]
+        app_and_arg = '/'.join(app_and_arg)
         # now I am ready to iterate over the file
+        print("Checking root: " + root)
         for line in open(os.path.join(root, 'stderr.txt'), 'r'):
             kernels = set()
             match = regexp.match(line)
             if match:
-                print("Checking root: " + root)
                 dev, kernel, invoc, event, mine, maxe, avge, totale = match.groups()
                 kernel = kernel.split('(')[0]
                 dev = dev.split('(')[0].replace(' ', '')
