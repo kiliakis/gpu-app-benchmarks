@@ -66,8 +66,8 @@ if __name__ == '__main__':
         app_and_arg = '/'.join(app_and_arg)
         # now I am ready to iterate over the file
         print("Checking root: " + root)
+        kernels = set()
         for line in open(os.path.join(root, 'stderr.txt'), 'r'):
-            kernels = set()
             match = regexp.match(line)
             if match:
                 dev, kernel, invoc, event, mine, maxe, avge, totale = match.groups()
