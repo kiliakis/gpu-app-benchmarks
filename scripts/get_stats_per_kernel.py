@@ -51,8 +51,8 @@ if __name__ == '__main__':
 
     if options.file == '':
         options.file = options.run_dir.split('/')[-1]
-    if not os.path.isdir('../results/csvfiles/'):
-        os.makedirs('../results/csvfiles/')
+    if not os.path.isdir(os.path.join(this_directory, '../results/csvfiles/')):
+        os.makedirs(os.path.join(this_directory, '../results/csvfiles/'))
     options.file = '{}../results/csvfiles/kernel-stats-{}.csv'.format(
         this_directory, options.file)
 
@@ -66,10 +66,10 @@ if __name__ == '__main__':
         app_and_arg = ''.join(app_and_arg)
         # now I am ready to iterate over the file
         for line in open(os.path.join(root, 'stderr.txt'), 'r'):
-            print("Checking root: " + root)
             kernels = set()
             match = regexp.match(line)
             if match:
+                print("Checking root: " + root)
                 dev, kernel, invoc, event, mine, maxe, avge, totale = match.groups()
                 kernel = kernel.split('(')[0]
                 dev = dev.split('(')[0].replace(' ', '')
