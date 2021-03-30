@@ -51,7 +51,8 @@ if __name__ == '__main__':
 
     if options.file == '':
         options.file = options.run_dir.split('/')[-1]
-
+    if not os.path.isdir('../results/csvfiles/'):
+        os.makedirs('../results/csvfiles/')
     options.file = '{}../results/csvfiles/kernel-stats-{}.csv'.format(
         this_directory, options.file)
 
