@@ -5,7 +5,7 @@ run:
     - parboil-0.2
     - sdk-4.1.15
     - ispass2009-1.0
-    # - rodinia-3.1
+    - rodinia-3.1
 
 rodinia_2.0-ft:
     exec_dir: "../bin/10.1/release/"
@@ -20,8 +20,8 @@ rodinia_2.0-ft:
         - heartwall-rodinia-2.0-ft:
             - ./data/test.avi 1 ./data/result-1.txt
         - kmeans-rodinia-2.0-ft:
-            - -i data/25600.txt -g data/25600-result.txt
-            - -i data/128k.txt -g data/128k-result.txt 
+            - -i ./data/25600.txt -g ./data/25600-result.txt
+            - -i ./data/128k.txt -g ./data/128k-result.txt 
         - lud-rodinia-2.0-ft:
             - -v -b -i ./data/2048.dat
             - -v -b -i ./data/256.dat
