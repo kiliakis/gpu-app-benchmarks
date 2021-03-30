@@ -19,7 +19,7 @@ parser.add_option("-r", "--run_dir", dest="run_dir",
                   help="The directory where the benchmark/config directories exist.", default="")
 
 
-parser.add_option("-f", "--file", dest = "file", default = "",
+parser.add_option("-f", "--file", dest="file", default="",
                   help="The output file name.")
 
 
@@ -72,6 +72,7 @@ if __name__ == '__main__':
             if match:
                 dev, kernel, invoc, event, mine, maxe, avge, totale = match.groups()
                 kernel = kernel.split('(')[0]
+                dev = dev.split('(')[0].replace(' ', '')
                 if kernel not in kernels:
                     kernels.add(kernel)
                     row = [app_and_arg, dev, 'kernel_name',
