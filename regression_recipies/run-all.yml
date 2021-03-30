@@ -161,44 +161,34 @@ rodinia-3.1:
     data_dirs: "../data_dirs/cuda/rodinia/3.1/"
     execs:
         - b+tree-rodinia-3.1:
-            - file ./data/mil.txt command ./data/command-small.txt
-        # - bfs-rodinia-3.1:
-        #     - 
+            - file ./data/mil.txt command ./data/command.txt
         # - cfd-rodinia-3.1:
-        #     - 
+            # - ./data/cfd/fvcorr.domn.097K   
+            # - ./data/cfd/fvcorr.domn.193K   
+            # - ./data/cfd/missile.domn.0.2M  
         - dwt2d-rodinia-3.1:
-            - ./data/768.bmp -d 768x768 -f -5 -l 3
-            # - ./data/192.bmp -d 192x192 -f -5 -l 3
+            - ./data/192.bmp -d 192x192 -f -5 -l 3
+            # - ./data/768.bmp -d 768x768 -f -5 -l 3
         - gaussian-rodinia-3.1:
             - -s 200
-        # - heartwall-rodinia-3.1:
-        #     - 
-        # - hotspot-rodinia-3.1:
-        #     - 
-        # - hotspot3D-rodinia-3.1:
-        #     - 
-        # - huffman-rodinia-3.1:
-        #     - 
+        - heartwall-rodinia-3.1:
+            - ./data/test.avi 1
+        - hotspot-rodinia-3.1:
+            - 512 2 2 ./data/temp_512 ./data/power_512 ./data/output512_2_2.out
+        - hotspot3D-rodinia-3.1:
+            - 512 8 100 ./data/power_512x8 ./data/temp_512x8 ./data/output.out
+        - huffman-rodinia-3.1:
+            - ./data/test1024_H2.206587175259.in 
         - hybridsort-rodinia-3.1:
-            # - ./data/80000.txt
-            - ./data/50000.txt
-            # - ./data/100000.txt
-        # - kmeans-rodinia-3.1:
-        #     - 
-        # - lavamd-rodinia-3.1:
-        #    -
-        - leukocyte-rodinia-3.1:
-            - ./data/testfile.avi 1 
-        - lud-rodinia-3.1:
-            - -v -b -i ./data/2048.dat
-            - -v -b -i ./data/256.dat
-        # - mummergpu-rodinia-3.1:
-        #     - ./data/NC_003997.20k.fna ./data/NC_003997_q25bp.50k.fna
+            - ./data/500000.txt
+        - lavaMD-rodinia-3.1:
+           - -boxes1d 10
+        # - leukocyte-rodinia-3.1:
+            # - ./data/testfile.avi 1 
+            # - ./data/testfile.avi 5 
         - myocyte-rodinia-3.1:
             # - 3 3 0
             - 3 3 1
-        # - nn-rodinia-3.1:
-        #     -
         - particlefilter_float-rodinia-3.1:
             - -x 64 -y 64 -z 8 -np 2000
         - srad_v1-rodinia-3.1:
