@@ -71,7 +71,9 @@ if __name__ == '__main__':
             match = regexp.match(line)
             if match:
                 dev, kernel, invoc, event, mine, maxe, avge, totale = match.groups()
-                kernel = kernel.split('(')[0].split('<')[0].split(' ')[1]
+                kernel = kernel.split('(')[0].split('<')[0]
+                if ' ' in kernel:
+                    kernel = kernel.split(' ')[1]
                 dev = dev.split('(')[0].replace(' ', '')
                 if kernel not in kernels:
                     kernels.add(kernel)
