@@ -66,7 +66,7 @@ if __name__ == '__main__':
         app_and_arg = '/'.join(app_and_arg)
         # now I am ready to iterate over the file
         print("Checking root: " + root)
-        kernels = set()
+        dic = {}
         for line in open(os.path.join(root, 'stderr.txt'), 'r'):
             match = regexp.match(line)
             if match:
@@ -79,15 +79,27 @@ if __name__ == '__main__':
                 avge = avge.replace('%', '')
                 totale = totale.replace('%', '')
                 dev = dev.split('(')[0].replace(' ', '').split('-')[0]
-                if kernel not in kernels:
-                    kernels.add(kernel)
-                    row = [app_and_arg, dev, 'kernel_name',
-                           invoc, '|'.join(([kernel] * int(invoc)))]
-                    rows.append(row)
-                row = [app_and_arg, dev, event, invoc,
-                       '|'.join(([totale] * int(invoc)))]
-                rows.append(row)
+                if event not in dic:
+                    dic['event'] = []
+                dic['event'] += [totale] * int(invoc)
 
+                if 'kernel_name' not in dic:
+                    dic['kernel_name'] = []
+                # if kernel not in dic['kernel_name']:
+                #     dic['kernel_name'] += [kernel] * int(invoc)
+
+                #     kernels.append(kernel)
+                #     kernelrow = [app_and_arg, dev, 'kernel_name',
+                #            invoc, '|'.join(([kernel] * int(invoc)))]
+                #     rows.append(row)
+                # row = [app_and_arg, dev, event, invoc,
+                #        '|'.join(([totale] * int(invoc)))]
+                # rows.append(row)
+        for k,v in dic.iteritems():
+            num_kernels = len(v)
+            row = [app_and_arg, dev, k, num_kernels, '|'.join(v)]
+            rows.append(row)
+            
     writer = csv.writer(open(options.file, 'w'), delimiter='\t')
     writer.writerows(rows)
 
