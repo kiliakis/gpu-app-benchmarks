@@ -74,6 +74,10 @@ if __name__ == '__main__':
                 kernel = kernel.split('(')[0].split('<')[0]
                 if ' ' in kernel:
                     kernel = kernel.split(' ')[1]
+                mine = mine.replace('%', '')
+                maxe = maxe.replace('%', '')
+                avge = avge.replace('%', '')
+                totale = totale.replace('%', '')
                 dev = dev.split('(')[0].replace(' ', '')
                 if kernel not in kernels:
                     kernels.add(kernel)
