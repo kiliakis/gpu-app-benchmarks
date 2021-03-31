@@ -84,8 +84,8 @@ sdk-4.1.15:
             # -
         # - cannyEdgeDetectorNPP:
             # -
-        - cdpAdvancedQuicksort:
-            -
+        # - cdpAdvancedQuicksort:
+            # -
         - cdpBezierTessellation:
             -
         - cdpQuadtree:
