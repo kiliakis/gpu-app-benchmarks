@@ -84,7 +84,7 @@ if __name__ == '__main__':
                 if 'kernel_name' not in dic:
                     dic['kernel_name'] = []
 
-                dic[event] += [totale] * int(invoc)
+                dic[event] += [avge] * int(invoc)
 
                 if kernel not in dic['kernel_name']:
                     dic['kernel_name'] += [kernel] * int(invoc)
