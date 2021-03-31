@@ -78,7 +78,7 @@ if __name__ == '__main__':
                 maxe = maxe.replace('%', '')
                 avge = avge.replace('%', '')
                 totale = totale.replace('%', '')
-                dev = dev.split('(')[0].replace(' ', '')
+                dev = dev.split('(')[0].replace(' ', '').split('-')[0]
                 if kernel not in kernels:
                     kernels.add(kernel)
                     row = [app_and_arg, dev, 'kernel_name',
