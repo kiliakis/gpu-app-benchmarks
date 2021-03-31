@@ -80,13 +80,14 @@ if __name__ == '__main__':
                 totale = totale.replace('%', '')
                 dev = dev.split('(')[0].replace(' ', '').split('-')[0]
                 if event not in dic:
-                    dic['event'] = []
-                dic['event'] += [totale] * int(invoc)
-
+                    dic[] = []
                 if 'kernel_name' not in dic:
                     dic['kernel_name'] = []
-                # if kernel not in dic['kernel_name']:
-                #     dic['kernel_name'] += [kernel] * int(invoc)
+
+                dic[event] += [totale] * int(invoc)
+
+                if kernel not in dic['kernel_name']:
+                    dic['kernel_name'] += [kernel] * int(invoc)
 
                 #     kernels.append(kernel)
                 #     kernelrow = [app_and_arg, dev, 'kernel_name',
@@ -99,7 +100,7 @@ if __name__ == '__main__':
             num_kernels = len(v)
             row = [app_and_arg, dev, k, num_kernels, '|'.join(v)]
             rows.append(row)
-            
+
     writer = csv.writer(open(options.file, 'w'), delimiter='\t')
     writer.writerows(rows)
 
