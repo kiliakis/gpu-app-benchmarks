@@ -80,7 +80,7 @@ if __name__ == '__main__':
                 totale = totale.replace('%', '')
                 dev = dev.split('(')[0].replace(' ', '').split('-')[0]
                 if event not in dic:
-                    dic[] = []
+                    dic[event] = []
                 if 'kernel_name' not in dic:
                     dic['kernel_name'] = []
 
