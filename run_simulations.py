@@ -26,14 +26,23 @@ this_directory = os.path.dirname(os.path.realpath(__file__)) + "/"
 # parser.add_argument('-c', '--configs_file', type=str,
 #                     help='configs_file used to determine which nvprof options are extracted.')
 nvprof_params = {
-    '-m': ['achieved_occupancy',
-           'ipc', 'issue_ipc', 'stall_exec_dependecy',
+    '-m': ['inst_per_warp',
+           'inst_executed', 'inst_issued',
+           'ipc', 'issued_ipc',
+           'warp_execution_efficiency',
+           'achieved_occupancy',
+           'sm_efficiency',
+           'eligible_warps_per_cycle',
+           'stall_exec_dependecy',
            'stall_memory_dependency', 'stall_pipe_busy',
-           'stall_other', 'stall_sync'
+           'stall_other', 'stall_sync', 'stall_inst_fetch',
+           'stall_texture', 'stall_not_selected',
+           'stall_sleeping'
            ],
-    '-e': ['elapsed_cycles_sm', 'elapsed_cycles_pm',
+    '-e': ['elapsed_cycles_sm', 'elapsed_cycles_pm', 'elapsed_cycles_sys',
            'active_warps_pm', 'active_cycles_pm',
-           'inst_issued0', 'inst_executed',
+           'thread_inst_executed',
+           'inst_issued0', 'inst_issued1', 'inst_issued2',
            'sm_cta_launched', 'warps_launched'],
 }
 # nvprof_params = ['nvprof', '-e', 'all', '-m', 'all', '--csv']
