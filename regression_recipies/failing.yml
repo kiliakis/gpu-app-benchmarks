@@ -1,11 +1,11 @@
 
 # The run_simulations.py script will run all the suites specified under run
 run:
-    - rodinia_2.0-ft
+    # - rodinia_2.0-ft
     - parboil-0.2
     # - sdk-4.1.15
     # - ispass2009-1.0
-    - rodinia-3.1
+    # - rodinia-3.1
 
 rodinia_2.0-ft:
     exec_dir: "../bin/10.1/release/"
@@ -28,15 +28,15 @@ rodinia_2.0-ft:
         #     - -v -b -i ./data/384.dat
         # - nw-rodinia-2.0-ft:
         #     - 1024 10 ./data/result_1024_10.txt
-        - nn-rodinia-2.0-ft:
+        # - nn-rodinia-2.0-ft:
         #     - ./data/filelist_32 3 30 90 ./data/filelist_32_3_30_90-result.txt
-            - ./data/filelist_64 3 30 90 ./data/filelist_32_3_30_90-result.txt
+            # - ./data/filelist_64 3 30 90 ./data/filelist_32_3_30_90-result.txt
         # - pathfinder-rodinia-2.0-ft:
         #     - 20000 200 50 ./data/result_20000_200_50.txt
         #     - 40000 400 50 ./data/result_20000_200_50.txt
-        - srad_v2-rodinia-2.0-ft:
-            - ./data/matrix128x128.txt 1 150 1 100 .5 40 ./data/result_matrix128x128_1_150_1_100_.5_2.txt
-            - ./data/matrix128x128.txt 1 150 1 100 .5 100 ./data/result_matrix128x128_1_150_1_100_.5_2.txt
+        # - srad_v2-rodinia-2.0-ft:
+            # - ./data/matrix128x128.txt 1 150 1 100 .5 40 ./data/result_matrix128x128_1_150_1_100_.5_2.txt
+            # - ./data/matrix128x128.txt 1 150 1 100 .5 100 ./data/result_matrix128x128_1_150_1_100_.5_2.txt
         # - streamcluster-rodinia-2.0-ft:
             # - 4 8 24 4096 4096 100 none output.txt 1 ./data/result_4_8_24_4096_4096_100_none_1.txt
             # - 4 8 24 8192 1024 100 none output.txt 1 ./data/result_4_8_24_4096_4096_100_none_1.txt
@@ -47,26 +47,26 @@ parboil-0.2:
     execs:
         - parboil-bfs:
             - -i ./data/1M/input/graph_input.dat
-        - parboil-cutcp:
-            - -i ./data/small/input/watbox.sl40.pqr
-        - parboil-histo:
-            - -i ./data/default/input/img.bin -- 1
+        # - parboil-cutcp:
+        #     - -i ./data/small/input/watbox.sl40.pqr
+        # - parboil-histo:
+        #     - -i ./data/default/input/img.bin -- 1
         - parboil-lbm:
             - -i ./data/short/input/120_120_150_ldc.of -- 2
-        - parboil-mri-gridding:
-            - -i ./data/small/input/small.uks -- 32 0
-        - parboil-mri-q:
-            - -i ./data/small/input/32_32_32_dataset.bin 1024
-        - parboil-sad:
-            - -i ./data/default/input/reference.bin,./data/default/input/frame.bin
-        - parboil-sgemm:
-            - -i ./data/medium/input/matrix1.txt,./data/medium/input/matrix2.txt,./data/medium/input/matrix2t.txt
-        - parboil-spmv:
-            - -i ./data/medium/input/bcsstk18.mtx,./data/medium/input/vector.bin
-        - parboil-stencil:
-            - -i ./data/small/input/128x128x32.bin -- 128 128 32 1 
-        - parboil-tpacf:
-            - -i ./data/small/input/Datapnts.1,./data/small/input/Randompnts.1 -- -p487 -n1
+        # - parboil-mri-gridding:
+        #     - -i ./data/small/input/small.uks -- 32 0
+        # - parboil-mri-q:
+        #     - -i ./data/small/input/32_32_32_dataset.bin 1024
+        # - parboil-sad:
+        #     - -i ./data/default/input/reference.bin,./data/default/input/frame.bin
+        # - parboil-sgemm:
+        #     - -i ./data/medium/input/matrix1.txt,./data/medium/input/matrix2.txt,./data/medium/input/matrix2t.txt
+        # - parboil-spmv:
+        #     - -i ./data/medium/input/bcsstk18.mtx,./data/medium/input/vector.bin
+        # - parboil-stencil:
+        #     - -i ./data/small/input/128x128x32.bin -- 128 128 32 1 
+        # - parboil-tpacf:
+        #     - -i ./data/small/input/Datapnts.1,./data/small/input/Randompnts.1 -- -p487 -n1
 
 sdk-4.1.15:
     exec_dir: "../bin/10.1/release/sdk/"
@@ -136,17 +136,17 @@ rodinia-3.1:
     execs:
         # - b+tree-rodinia-3.1:
         #     - file ./data/mil.txt command ./data/command.txt
-        - dwt2d-rodinia-3.1:
-            - ./data/768.bmp -d 768x768 -f -5 -l 3
+        # - dwt2d-rodinia-3.1:
+            # - ./data/768.bmp -d 768x768 -f -5 -l 3
         #     - ./data/1536.bmp -d 1536x1536 -f -5 -l 3
         # - gaussian-rodinia-3.1:
         #     - -s 180
         #     - -s 360
         # - heartwall-rodinia-3.1:
         #     - ./data/test.avi 1
-        - hotspot-rodinia-3.1:
-            - 512 4 4 ./data/temp_512 ./data/power_512 ouput.out
-            - 1024 4 4 ./data/temp_1024 ./data/power_1024 ouput.out
+        # - hotspot-rodinia-3.1:
+            # - 512 4 4 ./data/temp_512 ./data/power_512 ouput.out
+            # - 1024 4 4 ./data/temp_1024 ./data/power_1024 ouput.out
         # - hotspot3D-rodinia-3.1:
         #     - 512 8 100 ./data/power_512x8 ./data/temp_512x8 ./data/output.out
         # - huffman-rodinia-3.1:
